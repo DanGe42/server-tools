@@ -1,0 +1,8 @@
+# isit.today
+server {
+    listen  80;
+    server_name www.isit.today;
+
+    root    /data/sites/isit.today;
+    index   index.html;
+}

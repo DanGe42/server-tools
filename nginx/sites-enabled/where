@@ -1,0 +1,14 @@
+# Where in the world is Danger Dan?
+server {
+    listen  80;
+    server_name where.danielge.org;
+
+    location / {
+        proxy_pass  http://localhost:9000;
+
+        proxy_set_header    Host    $http_host;
+        proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header    X-Forwarded-Protocol http;
+        proxy_redirect off;
+    }
+}

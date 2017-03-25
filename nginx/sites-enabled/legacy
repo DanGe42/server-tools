@@ -1,0 +1,10 @@
+# Legacy redirects
+
+# Old CIS 191 mirror
+server {
+    listen  80;
+    server_name linux.dge.io;
+
+    root /data/sites/cis191-2012f;
+    index index.html;
+}

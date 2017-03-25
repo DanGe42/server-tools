@@ -1,0 +1,8 @@
+# KCECH Scavenger Hunt
+server {
+    listen  80;
+    server_name kcech-hunt.danielge.org;
+
+    root    /data/sites/kcech-hunt;
+    index   index.html;
+}

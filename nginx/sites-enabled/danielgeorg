@@ -1,0 +1,15 @@
+# For stuff that links to the old website
+server {
+    listen  80;
+    server_name www.danielge.org;
+
+    # Everything else will be directed to the old site
+    location ~ "/\w+/.*" {
+        return  301 $scheme://old.danielge.org$request_uri;
+    }
+
+    # Everything in the root will go to the new site
+    location / {
+        return  301 $scheme://dge.io/;
+    }
+}
