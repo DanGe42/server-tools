@@ -21,6 +21,9 @@ fi
 container_tag="$1"
 directory="$2"
 
+# Raise error for unset variables
+set -o nounset
+
 if [ ! -f "$directory/Dockerfile" ]
 then
     echo "$directory does not contain a Dockerfile" 2> /dev/null
