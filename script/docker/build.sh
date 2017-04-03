@@ -52,7 +52,8 @@ fi
 file $DUMB_INIT_FILE | grep ELF
 
 # Create a temporary workspace and copy the contents of supplied directory to it
-workspace=$(mktemp -d -t "${container_tag}_workspace")
+tmpdir=${TMPDIR:-/tmp}
+workspace=$(mktemp -d "$tmpdir/${container_tag}_workspace.XXXXX")
 cp -r "$directory"/* "$workspace/"
 
 # Now also add dumb-init
